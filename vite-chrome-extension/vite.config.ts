@@ -8,7 +8,14 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
+        options: resolve(__dirname, "options.html"),
+        background: resolve(__dirname, "src/background.ts")
       },
+      output: {
+        entryFileNames: (chunkInfo) => {
+          return chunkInfo.name === 'background' ? '[name].js' : 'assets/[name]-[hash].js';
+        }
+      }
     },
     outDir: "dist",
   },

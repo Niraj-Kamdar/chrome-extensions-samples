@@ -11,7 +11,16 @@
       "128": "icon128.png"
     }
   },
-  "permissions": ["storage"],
+  "options_page": "options.html",
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "permissions": ["storage", "contextMenus"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
   "icons": {
     "16": "icon16.png",
     "48": "icon48.png",
